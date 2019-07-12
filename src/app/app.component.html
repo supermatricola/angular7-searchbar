@@ -1,0 +1,15 @@
+<div class="container h-100">
+  <div class="d-flex justify-content-center h-100">
+    <div class="searchbar">
+      <input (input)="onSearchChange($event.target.value)" class="search_input" type="text" name="" placeholder="Search...">
+      <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+      <ul *ngIf="results$">
+        <li *ngFor="let result of results$ | slice:0:9">
+          <a href="{{ result.latest }}" target="_blank">
+            {{ result.name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
